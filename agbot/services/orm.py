@@ -37,6 +37,10 @@ class ENTResult(BaseModel):
 
         return data
 
+    @classmethod
+    def truncate(cls):
+        [s.delete() for s in cls.all()]
+
 
 class AETResult(BaseModel):
     __tablename__ = "aet_results"

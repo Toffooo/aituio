@@ -1,0 +1,88 @@
+{
+    "welcome": {
+        "text": "Привет {}. \nВот список моих комманд. \n\nГлавная беседа: https://t.me/joinchat/Vn18_UHpGuqxVjVw \nФлуд беседа: https://t.me/joinchat/UvsQ24FRSu3jOsrL \nСайт: https://astanait.edu.kz/ \nAET: https://admission.astanait.edu.kz/aet",
+        "buttons": [
+            {
+                "text": "Прошлогодние результаты ЕНТ",
+                "callback_data": "_ent_ly_res"
+            },
+            {
+                "text": "Инструкция к поступлению",
+                "callback_data": "_scolar_instr" 
+            },
+            {
+                "text": "Получить список специальностей",
+                "callback_data": "_jobs_get"
+            },
+            {
+                "text": "Важные даты",
+                "callback_data": "_important_dates"
+            },
+            {
+                "text": "Результаты AET",
+                "callback_data": "_aet_results"
+            }
+        ]
+    },
+    "welcome_wo_locale": { 
+        "text": "Привет {}. Выбери язык",
+        "buttons": [
+            {
+                "text": "RU",
+                "callback_data": "ru_RU"
+            },
+            {
+                "text": "KZ",
+                "callback_data": "kz_KZ"
+            }
+        ]
+    },
+    "ent_results": {
+        "text": "Вот прошлоглдние результаты ЕНТ({})",
+        "buttons": [
+            {
+                "text": "Назад",
+                "callback_data": "_ent_ly_backtw"
+            }
+        ]
+    },
+    "scolarship_instr": {
+        "text": "1.сдаешь первый и второй ЕНТ \n2.сдаешь первый и второй АЕТ \n3.не набрал 35 по англ на АЕТ, подаешь документы на курсы англ \nhttps://admission.astanait.edu.kz/ \n4.подаешь документы онлайн до 13 июля \nhttps://abitur.astanait.edu.kz/ \n5.отправляешь документы через почту в АЙТУ до 13 июля(реальная почта - казпочта и т.д) \n6.подаешь документы в egov для участия в конкурсе грантов с 13 июля по 20 июля \n7.ждешь результаты конкурса гранта \n8*.выйграл грант в АЙТУ, идешь в универ подписывать договор \n8*.не выйграл грантв АЙТУ, идешь в универ на платку или в другой, в котором выйграл грант",
+        "buttons": [
+            {
+                "text": "Назад",
+                "callback_data": "_scolar_backtw"
+            }
+        ]
+    },
+    "jobs_image": {
+        "text": "{}",
+        "buttons": [
+            {
+                "text": "Назад",
+                "callback_data": "_jobs_backtw"
+            }
+        ]
+    },
+    "important_dates": {
+        "text": "{}",
+        "buttons": [
+            {
+                "text": "Назад",
+                "callback_data": "_important_dates_backtw"
+            }
+        ]
+    },
+    "aet_results": {
+        "text": "{}",
+        "buttons": [
+            {
+                "text": "Назад",
+                "callback_data": "_aet_results_backtw"
+            }
+        ]
+    },
+    "_add": {
+        "text": "\n\nБот создан абитуриентом и обслуживается им же. \nПоддержать автора можно через: \n1. DonationAlerts: https://www.donationalerts.com/r/deadlynxx"
+    }
+}
