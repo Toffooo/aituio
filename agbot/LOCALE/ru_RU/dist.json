@@ -21,6 +21,10 @@
             {
                 "text": "Результаты AET",
                 "callback_data": "_aet_results"
+            },
+            {
+                "text": "Документы для подачи",
+                "callback_data": "_docs_get"
             }
         ]
     },

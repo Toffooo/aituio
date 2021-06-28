@@ -4,6 +4,7 @@ from aiogram.types import CallbackQuery, Message
 
 from agbot.services.conversation import (
     AETResultsScenario,
+    DocsScenario,
     ENTScenario,
     ImportantDatesScenario,
     JobsImageScenario,
@@ -75,14 +76,14 @@ def register_default(dp: Dispatcher):
 
 def register_default_callback_handlers(dp: Dispatcher, bot: Bot):
     gl_bot.append(bot)
+    _methods = (_setup, _setup_callback)
 
-    _ent = ENTScenario(dialog=dialog, setup_methods=(_setup, _setup_callback))
-    _scolar = ScolarScenario(dialog=dialog, setup_methods=(_setup, _setup_callback))
-    _jbimg = JobsImageScenario(dialog=dialog, setup_methods=(_setup, _setup_callback))
-    _impd = ImportantDatesScenario(
-        dialog=dialog, setup_methods=(_setup, _setup_callback)
-    )
-    _aetsc = AETResultsScenario(dialog=dialog, setup_methods=(_setup, _setup_callback))
+    _ent = ENTScenario(dialog=dialog, setup_methods=_methods)
+    _scolar = ScolarScenario(dialog=dialog, setup_methods=_methods)
+    _jbimg = JobsImageScenario(dialog=dialog, setup_methods=_methods)
+    _impd = ImportantDatesScenario(dialog=dialog, setup_methods=_methods)
+    _aetsc = AETResultsScenario(dialog=dialog, setup_methods=_methods)
+    _docs = DocsScenario(dialog=dialog, setup_methods=_methods)
 
     dp.register_callback_query_handler(
         select_locale, lambda c: (c.data == "ru_RU" or c.data == "kz_KZ"), state="*"
@@ -119,6 +120,11 @@ def register_default_callback_handlers(dp: Dispatcher, bot: Bot):
         _aetsc.get_aet_resutls_handler,
         lambda c: c.data.lower() == "_aet_results",
         state="*",
+    )
+
+    # Docs
+    dp.register_callback_query_handler(
+        _docs.get_docs_handler, lambda c: c.data.lower() == "_docs_get", state="*"
     )
 
     # Back

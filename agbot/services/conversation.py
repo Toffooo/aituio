@@ -3,6 +3,7 @@ from datetime import datetime
 from aiogram.types import CallbackQuery
 
 from aitu_data_extractors.site import get_jobs_image
+from settings import ABS_PATH
 
 
 class BaseScenario:
@@ -31,6 +32,18 @@ class BaseScenario:
             text=message,
             reply_markup=markup,
         )
+
+
+class DocsScenario(BaseScenario):
+    async def get_docs_handler(self, callback_query: CallbackQuery):
+        await self._class_setup(callback_query.from_user.id)
+        await self.bot.answer_callback_query(callback_query.id)
+
+        with open(f"{ABS_PATH}/agbot/Resources/docs.jpg", "rb") as photo:
+            await self.bot.send_photo(
+                chat_id=callback_query.message.chat.id,
+                photo=photo,
+            )
 
 
 class AETResultsScenario(BaseScenario):
